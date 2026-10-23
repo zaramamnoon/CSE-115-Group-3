@@ -26,7 +26,7 @@ void save_password(const char *pass) {  //password is declared as a constant
 //Sanjida's code
 
 
-//Elma's code
+//Elma's code - main()
 int main() {
     int choice;
 
