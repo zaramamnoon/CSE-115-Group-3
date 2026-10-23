@@ -1,10 +1,15 @@
 //This contains all the code of the project
 
 //Jannati's code
-void clear_screen(){
+void clear_screen() { //clears the console screen
+#ifdef _WIN32
     system("cls");
+#else
+    system("clear");
+#endif
 }
-int read_int() {
+
+int read_int() { //take input; remove leftover, return number
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
