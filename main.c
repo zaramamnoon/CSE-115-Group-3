@@ -27,7 +27,7 @@ void clear_screen() { //clears the console screen
 #endif
 }
 
-int read_int() { //take input; remove leftover, return number
+int read_int() { //take input; remove leftover; return number
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
