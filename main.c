@@ -42,7 +42,7 @@ void save_password(const char *pass) {  //password is declared as a constant
 //Juthi's code
 
 
-//Sanjida's code
+//Sanjida's code - Delete Entry
 void delete_entry() {
     int total = count_entries();
     int n, i = 0;
