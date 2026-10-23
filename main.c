@@ -1,4 +1,22 @@
 //This contains all the code of the project
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <ctype.h>
+
+#define KEY 5                    
+#define DIARY_FILE "diary.dat"   
+#define TEMP_FILE  "temp.dat"   
+#define PASS_FILE  "pass.dat"    
+#define MAX_TRIES  3
+#define PASS_LEN   30
+
+struct Entry {
+    char date[20];
+    char title[50];
+    char content[500];
+};
 
 //Jannati's code
 void clear_screen() { //clears the console screen
