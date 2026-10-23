@@ -57,7 +57,39 @@ void save_password(const char *pass) {  //password is declared as a constant
 } //modules to load, change password etc is yet remaining to be written
 
 
-//Juthi's code
+//Juthi's code - Add Entry
+/* ---------- Add ---------- */
+void add_entry() {
+    struct Entry e;
+    FILE *fp;
+
+    memset(&e, 0, sizeof(e));   /* so that no garbage data goes into the file */
+
+    time_t t = time(NULL);
+    struct tm *info = localtime(&t);
+    strftime(e.date, sizeof(e.date), "%d-%m-%Y", info);
+
+    printf("Title: ");
+    read_line(e.title, sizeof(e.title));
+    if (strlen(e.title) == 0) {
+        printf("Title cannot be empty.\n");
+        return;
+    }
+    printf("Content: ");
+    read_line(e.content, sizeof(e.content));
+
+    crypt_entry(&e);   /* encrypt before saving */
+
+    fp = fopen(DIARY_FILE, "ab");
+    if (fp == NULL) {
+        printf("Could not open the file!\n");
+        return;
+    }
+    fwrite(&e, sizeof(struct Entry), 1, fp);
+    fclose(fp);
+
+    printf("Entry saved (%s)\n", e.date);
+}
 
 
 //Sanjida's code - Delete Entry
