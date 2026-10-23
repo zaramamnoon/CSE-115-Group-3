@@ -1,7 +1,21 @@
 //This contains all the code of the project
 
 //Jannati's code
-
+void clear_screen(){
+    system("cls");
+}
+int read_int() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    getchar(); 
+    return n;
+}
+void pause_screen(){
+    char ch;
+    printf("\nPress Enter to go back");
+    ch = getchar();
+}
 
 //Zara's code - LOGIN
 void save_password(const char *pass) {  //password is declared as a constant
