@@ -43,6 +43,43 @@ void save_password(const char *pass) {  //password is declared as a constant
 
 
 //Sanjida's code
+void delete_entry() {
+    int total = count_entries();
+    int n, i = 0;
+    char ans[10];
+    struct Entry e;
+    FILE *in, *out;
+
+    if (total == 0) {
+        printf("No diary entries found.\n");
+        return;
+    }
+
+    view_entries();
+
+    printf("\nWhich entry do you want to delete (1-%d, 0 = cancel): ",
+           total);
+    n = read_int();
+
+    if (n == 0) {
+        printf("Operation cancelled.\n");
+        return;
+    }
+
+    if (n < 1 || n > total) {
+        printf("Invalid number!\n");
+        return;
+    }
+
+    printf("Are you sure you want to delete entry #%d? (y/n): ", n);
+    read_line(ans, sizeof(ans));
+
+    if (ans[0] != 'y' && ans[0] != 'Y') {
+        printf("Entry was not deleted.\n");
+        return;
+    }
+ /* Remaining Implementation: The file-handling process to remove the selected entry */
+
 
 
 //Elma's code - main()
