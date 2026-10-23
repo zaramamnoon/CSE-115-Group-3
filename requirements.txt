@@ -1,0 +1,6 @@
+We are going to be using these header files in out code:
+<stdio.h> - Standard input/ output
+<stdlib.h> - Standard library
+<string.h> - String handling
+<time.h> - Date and time
+<ctype.h> - Character handling
