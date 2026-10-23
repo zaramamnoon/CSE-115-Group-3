@@ -27,3 +27,43 @@ void save_password(const char *pass) {  //password is declared as a constant
 
 
 //Elma's code
+int main() {
+    int choice;
+
+    if (!login()) {
+        printf("\nThe password has been entered incorrectly too many times. Program closed.\n");
+        return 1;
+    }
+    pause_screen();
+
+    while (1) {
+        clear_screen();
+        printf("=========== MY DIARY ===========\n");
+        printf("1. Add Entry\n");
+        printf("2. View All Entries\n");
+        printf("3. Search Entry\n");
+        printf("4. Edit Entry\n");
+        printf("5. Delete Entry\n");
+        printf("6. Change Password\n");
+        printf("0. Exit\n");
+        printf("================================\n");
+        printf("Choice: ");
+        choice = read_int();
+        printf("\n");
+
+        switch (choice) {
+            case 1: add_entry();       break;
+            case 2: view_entries();    break;
+            case 3: search_entries();  break;
+            case 4: edit_entry();      break;
+            case 5: delete_entry();    break;
+            case 6: change_password(); break;
+            case 0:
+                printf("Goodbye!\n");
+                return 0;
+            default:
+                printf("Invalid choice!\n");
+        }
+        pause_screen();
+    }
+}
